@@ -4,5 +4,11 @@ node {
    		git url: 'https://github.com/kixbarci/JenkinsDemoAspDotnet.git'
    	stage 'Build'
    		bat './Build.bat'
-  
+   	stage 'Deploy to QA'
+   		bat './QaDeploy.bat'
+   	stage 'Deploy to Stage'
+   		bat './StageDeploy.bat'
+   	stage 'Deploy to Production'
+   		bat './ProdDeploy.bat'
+		   
 }
