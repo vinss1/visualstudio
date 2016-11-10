@@ -6,6 +6,7 @@ node {
    		bat './Build.bat'
    	stage 'Deploy to QA'
    		bat './QaDeploy.bat'
+		input id: 'PRDTESTOK', message: 'Complete Product Test?', ok: 'Complete', submitter: 'francisb'
    	stage 'Deploy to Stage'
    		bat './StageDeploy.bat'
    	stage 'Deploy to Production'
