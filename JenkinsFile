@@ -2,7 +2,8 @@ node {
    
    	stage 'Checkout'
    		git url: 'https://github.com/kixbarci/JenkinsDemoAspDotnet.git'
-	stage 'Code Review'	   
+	stage 'Code Review'	 
+	    emailext body: 'http://localhost:8080/job/DemoPipeline/$BUILD_NUMBER/input/', subject: '[Jenkins] Your approval is required ', to: 'francisb@cloudstaff.com'  
 		input id: 'CODEREVIEWOK', message: 'Complete Code Review?', ok: 'Approve', submitter: 'francisb'   
    	stage 'Build'
 		git url: 'https://github.com/kixbarci/JenkinsDemoAspDotnet.git'   
