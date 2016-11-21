@@ -35,7 +35,9 @@ namespace JenkinsDemo
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-
+            services.AddOptions();
+            // Configure MySubOptions using a sub-section of the appsettings.json file
+            services.Configure<Helpers.MyOptions>(Configuration.GetSection("options"));
             services.AddMvc();
         }
 

@@ -34,6 +34,10 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <environment names="Staging"> <li><a >Staging</a></li></environment>
+                        <environment names="Development"> <li><a>Development</a></li></environment>
+                        <environment names="QA"> <li><a>QA</a></li></environment>
+                        <environment names="Production"> <li><a>Production</a></li></environment>
                 </ul>
             </div>
         </div>
