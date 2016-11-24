@@ -20,6 +20,5 @@ node {
 	stage 'Approval Deploy to Production'	   
 		input id: 'UATOK', message: 'Complete UAT?', ok: 'Approve', submitter: 'francisb'
    	stage 'Deploy to Production'
-   		bat './ProdDeploy.bat'
-		   
+   		bat './ProdDeploy.bat'	   
 }
