@@ -1,24 +1,40 @@
 node {
    
    	stage 'Checkout'
+<<<<<<< HEAD
    		git url: 'https://github.com/kixbarci/JenkinsDemoAspDotnet.git'
 	stage 'Code Review'	 
 	    emailext body: 'http://fbjenkinsmaster.cloudapp.net/job/DemoPipeline/$BUILD_NUMBER/input/', subject: '[Jenkins] Your approval is required ', to: 'vallab.v@gmail.com'  
 		input id: 'CODEREVIEWOK', message: 'Complete Code Review?', ok: 'Approve', submitter: 'vallab'   
+=======
+   		git url: 'https://github.com/kixbarci/JenkinsDemoAspDotnet.git'   
+>>>>>>> c62753375879523a99b9bfcb8b94150a7002dba4
    	stage 'Build'
 		git url: 'https://github.com/kixbarci/JenkinsDemoAspDotnet.git'   
    		bat './Build.bat'
 	stage 'Approval Deploy to QA'	   
+<<<<<<< HEAD
 		input id: 'UTESTOK', message: 'Complete Unit Test?', ok: 'Approve', submitter: 'vallab'
+=======
+		input id: 'UTESTOK', message: 'Complete Unit Test?', ok: 'Approve', submitter: 'vinss'
+>>>>>>> c62753375879523a99b9bfcb8b94150a7002dba4
    	stage 'Deploy to QA'
 	    git url: 'https://github.com/kixbarci/JenkinsDemoAspDotnet.git'
    		bat './QaDeploy.bat'
 	stage 'Approval Deploy to Stage'	   
+<<<<<<< HEAD
 		input id: 'PRDTESTOK', message: 'Complete Product Test?', ok: 'Approve', submitter: 'vallab'
    	stage 'Deploy to Stage'
    		bat './StageDeploy.bat'
 	stage 'Approval Deploy to Production'	   
 		input id: 'UATOK', message: 'Complete UAT?', ok: 'Approve', submitter: 'vallab'
+=======
+		input id: 'PRDTESTOK', message: 'Complete Product Test?', ok: 'Approve', submitter: 'vinss'
+   	stage 'Deploy to Stage'
+   		bat './StageDeploy.bat'
+	stage 'Approval Deploy to Production'	   
+		input id: 'UATOK', message: 'Complete UAT?', ok: 'Approve', submitter: 'vinss'
+>>>>>>> c62753375879523a99b9bfcb8b94150a7002dba4
    	stage 'Deploy to Production'
    		bat './ProdDeploy.bat'	   
 }
